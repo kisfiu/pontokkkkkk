@@ -67,7 +67,7 @@ public class NeuronBox implements Cloneable
 
         neurons = new Sprite[numberOfNeurons];
         for (int i = 0; i < neurons.length; ++i) {
-            neurons[i] = new Sprite(tiles, length, width, height, boxWidth, boxHeight);
+            neurons[i] = new Sprite(tiles, length, (int) (0.25*width), (int) (0.25*height), boxWidth, boxHeight);
         }
     }
 

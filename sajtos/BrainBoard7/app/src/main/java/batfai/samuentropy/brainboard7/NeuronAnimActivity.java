@@ -52,6 +52,7 @@ public class NeuronAnimActivity extends android.app.Activity
     private android.widget.ImageView iv;
     private Animation anim_rotate;
     private Animation anim_orbit;
+    private Animation anim_spin;
     private LinearLayout mainLayout;
 
     @Override
@@ -87,10 +88,12 @@ public class NeuronAnimActivity extends android.app.Activity
         iv = (android.widget.ImageView) findViewById(R.id.neuronanimation);
         anim_rotate = AnimationUtils.loadAnimation(this, R.anim.bg_anim_scale_bigger);
         anim_orbit = AnimationUtils.loadAnimation(this, R.anim.bg_anim_translate_rightup_v2);
+        anim_spin = AnimationUtils.loadAnimation(this, R.anim.bg_anim_rotate_left);
+
         AnimationSet animationSet = new AnimationSet(false);
         animationSet.addAnimation(anim_rotate);
         animationSet.addAnimation(anim_orbit);
-
+        animationSet.addAnimation(anim_spin);
         iv.startAnimation(animationSet);
     }
 
