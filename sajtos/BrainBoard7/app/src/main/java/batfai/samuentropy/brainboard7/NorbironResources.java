@@ -52,9 +52,13 @@ public class NorbironResources
     private Integer[] imgIDs =
             {
                     R.drawable.pcb550i, 1, 1,
+                    R.drawable.pcb550i_gray, 1, 1,
                     R.drawable.pcb550i_red, 1, 1,
-                    R.drawable.brainboard_board, 4, 1,
-                    R.drawable.clash, 4, 2
+                    R.drawable.pickone, 3, 3,
+                    R.drawable.picktwo, 3, 3,
+                    R.drawable.pickthree, 3, 3,
+                    R.drawable.pickfour, 3, 3
+
             };
 
     private Integer[] menuIDs =
@@ -107,7 +111,7 @@ public class NorbironResources
         }
         for(int i = 0; i<menuIDs.length; i++)
         {
-            NorbironResource norbironResource = new NorbironResource( (int)(BLOCK_SIZE * 0.6), (int)(BLOCK_SIZE * 0.6), menuIDs[i], surfaceView);
+            NorbironResource norbironResource = new NorbironResource( (int)(BLOCK_SIZE * 2.65), (int)(BLOCK_SIZE * 2.65), menuIDs[i], surfaceView);
             menuBoxes.add(new NeuronBox(neuronSprite, 2 * 14, 64, 62, 10, norbironResource.getBitmap(), 0, 0));
         }
     }

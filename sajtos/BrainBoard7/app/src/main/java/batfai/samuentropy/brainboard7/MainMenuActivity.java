@@ -4,11 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import static android.R.attr.width;
+import static batfai.samuentropy.brainboard7.R.attr.height;
 
 class MenuAdapter extends android.widget.BaseAdapter
 {
-
     private android.content.Context context;
     java.util.ArrayList<Integer> menuItems = new java.util.ArrayList<Integer>();
 
@@ -73,7 +79,7 @@ class MenuAdapter extends android.widget.BaseAdapter
 }
 
 
-
+//hogyan műxik a login
 public class MainMenuActivity extends android.app.Activity
 {
     private java.util.ArrayList<Integer> menuItems;
@@ -81,7 +87,7 @@ public class MainMenuActivity extends android.app.Activity
     static final int LOGIN_REQUEST = 0;
 	private String currentUser = "";
     private Context context;
-
+//maga a mainmenu
     @Override
     public void onCreate(android.os.Bundle savedInstanceState)
     {
@@ -91,7 +97,7 @@ public class MainMenuActivity extends android.app.Activity
         this.context = this;
         init();
     }
-
+//loginnál mi lesz
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
@@ -110,23 +116,24 @@ public class MainMenuActivity extends android.app.Activity
     public void init()
     {
         menuItems = new java.util.ArrayList<Integer>();
-        menuItems.add(R.drawable.main_menu_account_v2);
-        menuItems.add(R.drawable.main_menu_settings_v2);
-        menuItems.add(R.drawable.main_menu_games_v2);
-        menuItems.add(R.drawable.main_menu_brainboard_v2);
-        menuItems.add(R.drawable.main_menu_anim);
+        menuItems.add(R.drawable.main_menu_account_v2);    //marad
+        menuItems.add(R.drawable.main_menu_brainboard_v2); //marad
+        menuItems.add(R.drawable.main_menu_anim);          //marad
 
         android.widget.GridView gridView = (android.widget.GridView) findViewById(R.id.menuitems);
         MenuAdapter menuAdapter = new MenuAdapter(this);
         menuAdapter.setMenuItems(menuItems);
         gridView.setAdapter(menuAdapter);
 
+
+
+
         gridView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener()
         {
             public void onItemClick(android.widget.AdapterView<?> parent, android.view.View view, int position, long id)
             {
 
-                if (position == 3)
+                if (position == 1)
                 {
                     if(!(currentUser.equals("")))
                     {
@@ -136,7 +143,7 @@ public class MainMenuActivity extends android.app.Activity
                     }
                     else
                     {
-                        android.widget.Toast.makeText(context, "U need to log in first", android.widget.Toast.LENGTH_SHORT).show();
+                        android.widget.Toast.makeText(context, "Let's just log in first!", android.widget.Toast.LENGTH_SHORT).show();
                     }
                 }
                 if (position == 0)
@@ -145,7 +152,7 @@ public class MainMenuActivity extends android.app.Activity
                     startActivityForResult(intent, LOGIN_REQUEST);
                 }
 
-                if (position == 4)
+                if (position == 2)
                 {
                     android.content.Intent intent = new android.content.Intent(view.getContext(), NeuronAnimActivity.class);
                     startActivity(intent);
@@ -165,42 +172,5 @@ public class MainMenuActivity extends android.app.Activity
                 //startBackgroundAnimation();
             }
         });
-
     }
-
-
-    /*
-    public void startBackgroundAnimation()
-    {
-        android.view.animation.Animation rotateLeft		= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_rotate_left);
-        android.view.animation.Animation rotateRight	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_rotate_right);
-        android.view.animation.Animation rotateLeft2	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_rotate_left_v2);
-        android.view.animation.Animation rotateRight2	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_rotate_right_v2);
-        android.view.animation.Animation scaleSmaller	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_scale_smaller);
-        android.view.animation.Animation scaleBigger	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_scale_bigger);
-        android.view.animation.Animation transRightUp	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_translate_rightup);
-        android.view.animation.Animation transRightUp2	= android.view.animation.AnimationUtils.loadAnimation(this, R.anim.bg_anim_translate_rightup_v2);
-
-        android.view.animation.AnimationSet iv1set = new android.view.animation.AnimationSet(false);
-        iv1set.addAnimation(rotateLeft2);
-        iv1set.addAnimation(transRightUp);
-        findViewById(R.id.img_a).startAnimation(iv1set);
-
-        android.view.animation.AnimationSet iv2set = new android.view.animation.AnimationSet(false);
-        iv2set.addAnimation(rotateRight2);
-        iv2set.addAnimation(transRightUp2);
-        findViewById(R.id.img_b).startAnimation(iv2set);
-
-        android.view.animation.AnimationSet iv3set = new android.view.animation.AnimationSet(false);
-        iv3set.addAnimation(rotateLeft);
-        iv3set.addAnimation(transRightUp);
-        findViewById(R.id.img_c).startAnimation(iv3set);
-
-        android.view.animation.AnimationSet iv4set = new android.view.animation.AnimationSet(false);
-        iv4set.addAnimation(rotateRight);
-        iv4set.addAnimation(transRightUp2);
-        findViewById(R.id.img_d).startAnimation(iv4set);
-
-    }
-    */
 }

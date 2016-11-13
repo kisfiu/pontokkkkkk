@@ -83,8 +83,6 @@ public class NeuronAnimActivity extends android.app.Activity
 
     public void startAnim()
     {
-        //iv.setX(iv.getX() + iv.getX()/2);
-
         iv = (android.widget.ImageView) findViewById(R.id.neuronanimation);
         anim_rotate = AnimationUtils.loadAnimation(this, R.anim.bg_anim_scale_bigger);
         anim_orbit = AnimationUtils.loadAnimation(this, R.anim.bg_anim_translate_rightup_v2);

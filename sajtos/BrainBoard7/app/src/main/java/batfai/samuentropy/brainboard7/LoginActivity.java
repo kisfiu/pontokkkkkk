@@ -96,11 +96,11 @@ public class LoginActivity extends android.app.Activity
 
         if(uname.equals(""))
         {
-            android.widget.Toast.makeText(this, "username is empty", android.widget.Toast.LENGTH_SHORT).show();
+            android.widget.Toast.makeText(this, "Username not set", android.widget.Toast.LENGTH_SHORT).show();
             return -1;
         }
 
-        android.widget.Toast.makeText(this, "Welcome " + uname, android.widget.Toast.LENGTH_SHORT).show();
+        android.widget.Toast.makeText(this, "It's a pleasure to see you " + uname, android.widget.Toast.LENGTH_SHORT).show();
         currUser = uname;
         Intent data = new Intent();
         data.putExtra("username", uname);

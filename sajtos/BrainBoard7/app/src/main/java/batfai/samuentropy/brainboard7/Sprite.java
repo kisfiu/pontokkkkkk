@@ -1,9 +1,5 @@
 package batfai.samuentropy.brainboard7;
 
-/**
- * Created by artibarti on 2016.11.05..
- */
-
 public class Sprite
 {
 

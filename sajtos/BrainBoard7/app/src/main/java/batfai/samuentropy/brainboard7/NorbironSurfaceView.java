@@ -3,11 +3,6 @@ package batfai.samuentropy.brainboard7;
 import android.app.Activity;
 import android.content.Intent;
 
-/**
- * Created by artibarti on 2016.11.05..
- */
-
-
 public class NorbironSurfaceView extends android.view.SurfaceView implements Runnable
 {
     public int SLOT_SIZE = 120;
@@ -27,7 +22,7 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
     private android.view.SurfaceHolder surfaceHolder;
     private android.view.ScaleGestureDetector scaleGestureDetector;
-    private float scaleFactor = 0.3f;
+    private float scaleFactor = 0.3333f;
 
     private static boolean inited;
     private boolean running = true;
@@ -215,14 +210,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
                 nx = (int)(x + startsx) / SLOT_SIZE;
                 ny = (int)(y + startsy) / SLOT_SIZE;
 
-                /*
-                if (norbironMap.checkPosition(nx, ny) == true)
-                {
-                    selNb.setXY(nx,ny);
-                    norbironMap.saveMapToServer(currentUser);
-                }
-                */
-
                 selNb.setXY(nx,ny);
                 norbironMap.saveMapToServer(currentUser);
 
@@ -252,14 +239,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
                 nx = (int)(x + startsx) / SLOT_SIZE;
                 ny = (int)(y + startsy) / SLOT_SIZE;
 
-
-                /*
-                if (norbironMap.checkPosition(nx, ny) == true)
-                {
-                    selNb.setXY(nx,ny);
-                }
-                */
-
                 selNb.setXY(nx,ny);
 
 
@@ -271,7 +250,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
         }
         return true;
     }
-
 
     public void stop()
     {

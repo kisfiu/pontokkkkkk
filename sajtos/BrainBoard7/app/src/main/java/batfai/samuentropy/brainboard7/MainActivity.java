@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Firebase.setAndroidContext(this);
-
         rootRef = new Firebase("https://brainboard-3fea4.firebaseio.com/");
 
         button = (Button)findViewById(R.id.btn);
@@ -43,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
                     Firebase childRef = rootRef.child(keyValue);
                     childRef.setValue(value);
                 }
-
-                /*mRefChild.setValue("artikaaaa");
-                mRefChild = mRef.child("Születési év");
-                mRefChild.setValue(1);*/
             }
         }) ;
     }
