@@ -60,7 +60,7 @@ public class Sprite
         this.y = y;
     }
 
-public void draw(float shiftx, float shifty, android.graphics.Canvas canvas)
+    public void draw(float shiftx, float shifty, android.graphics.Canvas canvas)
     {
 
         int x = this.x + (int) shiftx;
@@ -68,13 +68,13 @@ public void draw(float shiftx, float shifty, android.graphics.Canvas canvas)
 
         from.left = tileIndex * width;
         from.right = tileIndex * width + width;
-        to.left = x+10;
-        to.top = y+10;
-        to.right = x + width-10;
-        to.bottom = y + height-10;
+        to.left = x;
+        to.top = y;
+        to.right = x + width;
+        to.bottom = y + height;
 
         canvas.drawBitmap(tiles, from, to, null);
 
-    }   
+    }
 
 }

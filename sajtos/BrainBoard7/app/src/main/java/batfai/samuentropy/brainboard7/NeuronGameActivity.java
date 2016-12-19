@@ -36,9 +36,6 @@ public class NeuronGameActivity extends android.app.Activity
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-		//params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
-		//params.leftMargin = 107
-
 		rl = (RelativeLayout) findViewById(R.id.relativeLayout);
 		rl.addView(nsv, params);
 	}

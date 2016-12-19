@@ -90,7 +90,6 @@ public class NorbironSurfaceView extends android.view.SurfaceView implements Run
 
         android.content.Intent intent = ((NeuronGameActivity) context).getIntent();
         android.os.Bundle bundle = intent.getExtras();
-        norbironMap.clearMap();
         norbironMap.initMapFromServer(currentUser);
 
         if (bundle != null)

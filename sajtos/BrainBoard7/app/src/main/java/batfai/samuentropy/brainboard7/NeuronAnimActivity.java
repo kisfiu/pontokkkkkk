@@ -48,6 +48,7 @@ package batfai.samuentropy.brainboard7;
 
 public class NeuronAnimActivity extends android.app.Activity
 {
+        private NorbironSurfaceView surfaceView;
 
     private android.widget.ImageView iv;
     private Animation anim_rotate;
@@ -94,5 +95,112 @@ public class NeuronAnimActivity extends android.app.Activity
         animationSet.addAnimation(anim_spin);
         iv.startAnimation(animationSet);
     }
+    
+    
+    
+    
+    /*
+
+@Override
+    public boolean onTouchEvent(android.view.MotionEvent event)
+    {
+        scaleGestureDetector.onTouchEvent(event);
+
+        float x = event.getX() / scaleFactor;
+        float y = event.getY() / scaleFactor;
+
+        if (event.getAction() == android.view.MotionEvent.ACTION_DOWN)
+        {
+            fromsx = x;
+            fromsy = y;
+
+            NeuronBox nb2 = norbironMap.getNearestNeuron(x + startsx, y + startsy);
+
+            if(nb2 != null)
+            {
+                if (nb2.getType() == 0)
+                {
+                    newNode();
+                }
+                else if (nb2.getType() == 1)
+                {
+                    newBox();
+                }
+                else
+                {
+                    nb2.setCover(!nb2.getCover());
+                    nb2.setSelected(!nb2.getSelected());
+                    selNb = nb2;
+                }
+            }
+            else
+            {
+                selNb = null;
+            }
+        }
+
+        else if (event.getAction() == android.view.MotionEvent.ACTION_POINTER_DOWN)
+        {
+            selNb = null;
+        }
+
+        else if (event.getAction() == android.view.MotionEvent.ACTION_CANCEL)
+        {
+
+        }
+
+        else if (event.getAction() == android.view.MotionEvent.ACTION_MOVE)
+        {
+
+            if (selNb != null)
+            {
+
+                int nx,ny;
+
+                nx = (int)(x + startsx) / SLOT_SIZE;
+                ny = (int)(y + startsy) / SLOT_SIZE;
+
+                selNb.setXY(nx,ny);
+                norbironMap.saveMapToServer(currentUser);
+
+                fromsx = x;
+                fromsy = y;
+
+            }
+
+            else if (Math.abs(fromsx - x) + Math.abs(fromsy - y) > 25)
+            {
+                startsx += (fromsx - x);
+                startsy += (fromsy - y);
+
+                fromsx = x;
+                fromsy = y;
+            }
+
+            repaint();
+        }
+
+        else if (event.getAction() == android.view.MotionEvent.ACTION_UP)
+        {
+            if (selNb != null)
+            {
+                int nx,ny;
+
+                nx = (int)(x + startsx) / SLOT_SIZE;
+                ny = (int)(y + startsy) / SLOT_SIZE;
+
+                selNb.setXY(nx,ny);
+
+
+                fromsx = x;
+                fromsy = y;
+
+                selNb = null;
+            }
+        }
+        return true;
+    }
+    */
 
 }
+
